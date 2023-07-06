@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class matrix {
+class Matrix {
     public:
         int matrixSize, numOfCells;
 
@@ -16,7 +16,11 @@ class matrix {
             cout << "Please enter number of alive cells \n";
             cin >> numOfCells;
         }
+};
 
+// Inheritance
+class LogicBuiding : public Matrix {
+    public:
         void processLogic() {
 
             vector <vector <int>> arr(matrixSize+2, vector<int>(matrixSize+2,0));
@@ -62,12 +66,11 @@ class matrix {
                     if(res[i][j]==1) cout<<i-1<<" "<<j-1<<endl;
                 }
             }
-
         }
 };
 
 int main() {
-    matrix obj;
+    LogicBuiding obj;
     obj.defineMatrixAndCells();
     obj.processLogic();
     return 0;
